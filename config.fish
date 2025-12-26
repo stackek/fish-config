@@ -3,8 +3,16 @@ if status is-interactive
 end
 
 set -U fish_greeting
+set -gx EDITOR nvim
 
 fzf --fish | source
+
+abbr -a rm 'trash'          
+abbr -a rrm 'rm'          
+abbr -a f 'firefox'         
+abbr -a orp 'orpie'
+abbr -a --position anywhere -- sc ~/sync 
+abbr -a cpt 'pwd | wl-copy'
 
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:

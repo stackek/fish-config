@@ -1,7 +1,5 @@
-complete -c cf -e
-complete -c cf -r -F
+function cf -d "Copies file into clipboard";
 
-function cf
     for arg in $argv
         if not test -e "$arg"; or test -z "$arg"
             echo "Error: File does not exist -> $arg"
@@ -11,4 +9,6 @@ function cf
         set file_uri (string replace -r ' ' '%20' "file://$file_path")
         echo -n $file_uri | wl-copy -t text/uri-list
     end
+
 end
+
