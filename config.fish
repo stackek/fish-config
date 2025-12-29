@@ -22,3 +22,6 @@ abbr -a cpt 'pwd | wl-copy'
 test -r '/home/gwegus/.opam/opam-init/init.fish' && source '/home/gwegus/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 # END opam configuration
 
+set -Ux SUDO_EDITOR nvim
+set -Ux VISUAL nvim
+set -Ux EDITOR nvim
