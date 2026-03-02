@@ -8,7 +8,6 @@ set -gx EDITOR nvim
 fzf --fish | source
 
 abbr -a rm 'trash'          
-abbr -a rrm 'rm'          
 abbr -a f 'firefox'         
 abbr -a orp 'orpie'
 abbr -a --position anywhere -- sc ~/sync 

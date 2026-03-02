@@ -28,5 +28,12 @@ function fish_prompt --description 'Write out the prompt'
     set -l statusb_color (set_color $bold_flag $fish_color_status)
     set -l prompt_status (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
 
-    echo -e -n -s (set_color $color_cwd) ($pwdd) $normal (fish_vcs_prompt) $normal '\n' $suffix " "
+    # Show command duration (in seconds) if it took at least 1 ms
+    set -l duration ""
+    set -l color_timer $fish_color_status
+    if test $CMD_DURATION -gt 0
+        set -l duration_sec (math "$CMD_DURATION / 1000")
+        set duration "$duration_sec s\n"
+    end
+    echo -e -n -s (set_color $color_timer) $duration (set_color $color_cwd) ($pwdd) $normal (fish_vcs_prompt) $normal '\n' $suffix " "
 end
