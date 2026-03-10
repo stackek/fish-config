@@ -1,5 +1,10 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    set -g fish_greeting ""
+    # vi mode for fish
+    fish_hybrid_key_bindings
+    function fish_mode_prompt
+
+    end
 end
 
 set -U fish_greeting
